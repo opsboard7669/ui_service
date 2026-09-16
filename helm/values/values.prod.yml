@@ -1,0 +1,25 @@
+# Production Environment Values - ui-service
+
+replicaCount: 3
+
+image:
+  repository: "944101542155.dkr.ecr.ap-south-1.amazonaws.com/task-manager/ui-service"
+  tag: ""
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: true
+  host: "taskmanager.com"
+
+resources:
+  requests:
+    cpu: "200m"
+    memory: "256Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"

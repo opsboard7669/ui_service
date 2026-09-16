@@ -1,0 +1,25 @@
+# Nonprod Environment Values - ui-service
+
+replicaCount: 2
+
+image:
+  repository: "944101542155.dkr.ecr.ap-south-1.amazonaws.com/task-manager/ui-service"
+  tag: ""
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: true
+  host: "nonprod.taskmanager.com"
+
+resources:
+  requests:
+    cpu: "150m"
+    memory: "256Mi"
+  limits:
+    cpu: "400m"
+    memory: "384Mi"

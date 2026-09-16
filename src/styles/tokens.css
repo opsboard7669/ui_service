@@ -1,0 +1,158 @@
+/* Design Tokens for OpsBoard UI */
+
+:root {
+  /* Spacing */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 0.75rem;    /* 12px */
+  --spacing-lg: 1rem;       /* 16px */
+  --spacing-xl: 1.5rem;     /* 24px */
+  --spacing-2xl: 2rem;      /* 32px */
+  --spacing-3xl: 3rem;      /* 48px */
+  --spacing-4xl: 4rem;      /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* Colors - Primary (Green) */
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-200: #bbf7d0;
+  --color-primary-300: #86efac;
+  --color-primary-400: #4ade80;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  --color-primary-800: #166534;
+  --color-primary-900: #14532d;
+
+  /* Colors - Background */
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #0f0f14;
+  --color-bg-tertiary: #16161f;
+  --color-bg-card: #0a0a0f;
+  --color-bg-input: #000000;
+
+  /* Glass Card Backgrounds */
+  --color-glass-card-base: rgba(18, 18, 24, 0.9);
+  --color-glass-card-hover: rgba(22, 22, 28, 0.95);
+  --color-glass-surface: rgba(22, 22, 28, 0.95);
+  --color-navbar-glass: rgba(12, 12, 18, 0.9);
+  --color-card-inner: #161B22;
+
+  /* Colors - Text */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #888888;
+  --color-text-muted: #666666;
+  --color-text-label: rgba(220, 220, 220, 0.9);
+  --color-text-placeholder: rgba(136, 136, 136, 0.7);
+
+  /* Colors - Border */
+  --color-border-primary: rgba(255, 255, 255, 0.08);
+  --color-border-secondary: rgba(255, 255, 255, 0.12);
+  --color-border-tertiary: rgba(255, 255, 255, 0.16);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
+  --color-border-focus: rgba(134, 239, 172, 0.5);
+  --color-border-error: rgba(239, 68, 68, 0.5);
+  --color-border-success: rgba(34, 197, 94, 0.5);
+
+  /* Colors - Semantic */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #86efac, #4ade80);
+  --gradient-primary-hover: linear-gradient(135deg, #a7f3d0, #86efac);
+  --gradient-logo: linear-gradient(90deg, #86efac, #4ade80, #22c55e, #86efac);
+  --gradient-shimmer: linear-gradient(90deg, #ffffff 0%, #22c55e 25%, #ffffff 50%, #22c55e 75%, #ffffff 100%);
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.8125rem;   /* 13px */
+  --font-size-base: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;        /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-base: 200ms;
+  --transition-slow: 300ms;
+  --transition-slower: 400ms;
+
+  --transition-ease: ease;
+  --transition-ease-in: ease-in;
+  --transition-ease-out: ease-out;
+  --transition-ease-in-out: ease-in-out;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.16), 0 6px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.16), 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.16), 0 12px 32px rgba(0, 0, 0, 0.12);
+
+  --shadow-primary-sm: 0 1px 3px rgba(134, 239, 172, 0.2), 0 2px 8px rgba(134, 239, 172, 0.15);
+  --shadow-primary-md: 0 2px 6px rgba(134, 239, 172, 0.3), 0 6px 16px rgba(134, 239, 172, 0.25);
+  --shadow-primary-lg: 0 4px 12px rgba(134, 239, 172, 0.3), 0 8px 24px rgba(134, 239, 172, 0.25);
+
+  --shadow-glass-card: 0 1px 3px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
+  --shadow-glass-card-hover: 0 2px 6px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(0, 0, 0, 0.15), 0 12px 32px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover-indigo: 0 0 0 1px rgba(99, 102, 241, 0.4), 0 8px 24px rgba(99, 102, 241, 0.15);
+  --shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-notification-badge: 0 2px 8px rgba(134, 239, 172, 0.4);
+  --shadow-notification-badge-hover: 0 4px 12px rgba(134, 239, 172, 0.5);
+
+  /* Z-Index */
+  --z-dropdown: 50;
+  --z-sticky: 100;
+  --z-modal-backdrop: 200;
+  --z-modal: 300;
+  --z-tooltip: 400;
+  --z-notification: 9999;
+
+  /* Opacity */
+  --opacity-disabled: 0.5;
+  --opacity-hover: 0.8;
+  --opacity-focus: 0.9;
+  --opacity-border-base: 0.08;
+  --opacity-border-secondary: 0.12;
+  --opacity-border-tertiary: 0.16;
+  --opacity-border-hover: 0.2;
+  --opacity-border-focus: 0.5;
+  --opacity-glass-card-base: 0.9;
+  --opacity-glass-card-hover: 0.95;
+  --opacity-glass-surface: 0.95;
+  --opacity-navbar-glass: 0.9;
+  --opacity-dropdown-glass: 0.95;
+  --opacity-modal-glass: 0.95;
+  --opacity-notification-panel-glass: 0.72;
+
+  /* Blur */
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --blur-lg: 20px;
+  --blur-xl: 30px;
+  --blur-2xl: 40px;
+}
+

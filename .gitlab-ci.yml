@@ -1,0 +1,90 @@
+spec:
+  inputs:
+    ENV:
+     default: "preprod"
+     description: "Please Enter the Env Value."
+     options:
+      - "preprod"
+      - "nonprod"
+      - "prod"
+    SERVICE_NAME:
+      default: "app-shell"
+      description: "Please Enter The Name of Service."
+    VERSION:
+      default: "1.0.14"
+      description: "Please enter the service version."
+    SUBNAMESPACE:
+      default: "opsboard-backend--preprod"
+      description: "Pease enter the namespace value."
+    FORCE_BUILD:
+      default: "ON"
+      description: "Please choose whether to force build or not."
+      options:
+        - "ON"
+        - "OFF"
+    SCAN:
+      default: "OFF"
+      description: "Please choose whether to scan or not."
+      options:
+        - "ON"
+        - "OFF"
+    DEPLOY:
+      default: "true"
+      description: "Please choose whether to deploy or not."
+      options:
+        - "true"
+        - "false"
+
+---
+
+image: vedant7669/opsboard-base-image:1.1
+
+stages:
+  - build
+  - scan
+  - deploy
+
+variables:
+  ENV: $[[ inputs.ENV ]]
+  SERVICE_NAME: $[[ inputs.SERVICE_NAME ]]
+  VERSION: $[[ inputs.VERSION ]]
+  SUBNAMESPACE: $[[ inputs.SUBNAMESPACE ]]
+  FORCE_BUILD: $[[ inputs.FORCE_BUILD ]]
+  SCAN: $[[ inputs.SCAN ]]
+  DEPLOY: $[[ inputs.DEPLOY ]]
+
+before_script:
+  - chmod +x ./build/*.sh
+
+build_and_push:
+  stage: build
+  tags:
+    - saas-linux-small-amd64
+  only:
+    variables:
+      - $FORCE_BUILD == "ON"
+  script:
+    - echo "Building docker image..."
+    - ./build/build_and_push.sh
+
+vulnerability_scan:
+  stage: scan
+  tags:
+    - saas-linux-small-amd64
+  only:
+    variables:
+      - $SCAN == "ON"
+  script:
+    - echo "Scanning docker image.."
+    - ./build/scan_artifacts.sh
+  
+deploy:
+  stage: deploy
+  tags:
+    - k3s-runner
+  only:
+    variables:
+      - $DEPLOY == "true"
+  script:
+    - echo "Image is getting deployed..."
+    - ./build/deploy.sh
